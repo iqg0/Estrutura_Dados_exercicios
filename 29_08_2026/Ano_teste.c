@@ -11,7 +11,7 @@
         int ano;
     } Data ;
 
-    bool validaData(int , int mes, int ano){
+    bool validaData(int dia, int mes, int ano){
 
         if(mes <= 0 || mes > 12){
             return false;
