@@ -19,7 +19,7 @@ int main (){
         printf("Lista vazia!");
     }
     else{
-        ("A lista nao esta vazia");
+        printf("A lista nao esta vazia");
     }
 
     return 0;
