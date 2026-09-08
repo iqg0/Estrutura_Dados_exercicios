@@ -26,9 +26,9 @@ int main (){
 
     Lista *minhalista = criarlista();
 
-    minhalista = lst_insere(minhalista, 5);
-    minhalista = lst_insere(minhalista, 10);
     minhalista = lst_insere(minhalista, 20);
+    minhalista = lst_insere(minhalista, 10);
+    minhalista = lst_insere(minhalista, 5);
     
     
     if(minhalista == NULL){
@@ -38,7 +38,7 @@ int main (){
         printf("A lista nao esta vazia");
     }
 
-    imprimirLista();
+    imprimirLista(minhalista);
 
     return 0;
 }
@@ -48,7 +48,7 @@ void imprimirLista(Lista *lista){
     aux = lista;
 
     while(aux != NULL){
-        printf("%d", aux ->info);
+        printf("%d\n", aux ->info);
         aux = aux ->prox;
     }
 }
