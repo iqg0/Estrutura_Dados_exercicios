@@ -3,8 +3,8 @@
 
 
 typedef struct lista {
-int info;
-struct lista* prox;
+    int info;
+    struct lista* prox;
 } Lista ;
 
 Lista *criarlista(void){
@@ -19,6 +19,8 @@ Lista *lst_insere(Lista *lista, int valor){
 
     return novo;
 }
+
+void imprimirLista(Lista *lista);
 
 int main (){
 
@@ -36,5 +38,17 @@ int main (){
         printf("A lista nao esta vazia");
     }
 
+    imprimirLista();
+
     return 0;
+}
+
+void imprimirLista(Lista *lista){
+    Lista *aux;
+    aux = lista;
+
+    while(aux != NULL){
+        printf("%d", aux ->info);
+        aux = aux ->prox;
+    }
 }
