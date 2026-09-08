@@ -35,7 +35,7 @@ int main (){
         printf("Lista vazia!");
     }
     else{
-        printf("A lista nao esta vazia");
+        printf("A lista nao esta vazia\n");
     }
 
     imprimirLista(minhalista);
