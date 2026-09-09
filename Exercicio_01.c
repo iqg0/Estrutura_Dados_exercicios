@@ -21,6 +21,8 @@ Lista *lst_insere(Lista *lista, int valor){
 }
 
 void imprimirLista(Lista *lista);
+void lst_fim(lista, valor);
+
 
 int main (){
 
