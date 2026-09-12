@@ -39,6 +39,7 @@ Lista *lst_fim(Lista *lista, int valor){
     novo -> prox = NULL;
     aux -> prox = novo;
     
+    return lista;
 
 }
 
