@@ -21,8 +21,26 @@ Lista *lst_insere(Lista *lista, int valor){
 }
 
 void imprimirLista(Lista *lista);
-void lst_fim(lista, valor);
 
+Lista *lst_fim(Lista *lista, int valor){
+    if(lista == NULL){
+        return lst_insere(lista, valor);
+    }
+
+    Lista *aux;
+    aux = lista;
+    while(aux -> prox != NULL){
+        aux = aux -> prox;
+    }
+
+    Lista *novo =  (Lista*) malloc(sizeof(Lista));
+    
+    novo -> info = valor;
+    novo -> prox = NULL;
+    aux -> prox = novo;
+    
+
+}
 
 int main (){
 
@@ -49,7 +67,7 @@ void imprimirLista(Lista *lista){
     Lista *aux;
     aux = lista;
 
-    while(aux != NULL){
+    while(aux != NULL ){
         printf("%d\n", aux ->info);
         aux = aux ->prox;
     }
