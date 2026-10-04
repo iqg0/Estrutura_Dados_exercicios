@@ -40,6 +40,30 @@ Lista *lst_fim(Lista *lista, int valor){
     aux -> prox = novo;
     
     return lista;
+}
+
+Lista *lst_insere_ordem (Lista *lista, int valor){
+
+    if(lista == NULL || valor < lista -> info){
+        return lst_insere(lista, valor);
+    }
+    Lista *anterior;
+    Lista *atual;
+
+    anterior = NULL;
+    atual = lista;
+
+    while(atual != NULL && valor > atual->info){
+        anterior = atual;
+        atual = atual->prox;
+    }
+
+    Lista *novo = (Lista*) malloc(sizeof(Lista));
+    novo -> info = valor;
+    novo -> prox = atual;
+    anterior -> prox = novo;
+
+    return lista;
 
 }
 
@@ -50,6 +74,8 @@ int main (){
     minhalista = lst_insere(minhalista, 20);
     minhalista = lst_insere(minhalista, 10);
     minhalista = lst_insere(minhalista, 5);
+    minhalista = lst_fim(minhalista, 30);
+    minhalista = lst_insere_ordem(minhalista, 15);
     
     
     if(minhalista == NULL){
