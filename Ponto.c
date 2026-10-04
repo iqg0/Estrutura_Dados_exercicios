@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <math.h>
-#include <Ponto.h> // Inclui os prototipos
+#include <stdlib.h>
+#include "Ponto.h" // Inclui os prototipos
 
 
 // Definicao dos tipos de dados
@@ -53,7 +54,7 @@ float pto_distancia(Ponto* p1, Ponto* p2){
 int main(){
     float d;
     Ponto* p, *q;
-    //Ponto r; //ERRO
+    //Ponto r; //ERRO (Nao sera mais possivel declarar uma variavel para a estrutura, apenas ponteiros)
     p = pto_cria(10,11);
     q = pto_cria(7,25);
     // q-> x = 2; //ERRO
