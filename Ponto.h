@@ -11,7 +11,7 @@ void pto_libera (Ponto* p); //Equivalente ao fclose() (Libeira o ponteiro de p/ 
 void pto_acessa (Ponto *p, float* x, float* y); // Retorna a parte x e y por referencia do nosso ponto
 
 //Atribui os valores "x" e "y" a um ponto
-void pto_atribui(Ponto* p, float* x, float* y); // Pega o valor x e y passa para a nossa funcao e coloca em nosso ponto
+void pto_atribui(Ponto* p, float x, float y); // Pega o valor x e y passa para a nossa funcao e coloca em nosso ponto
 
 //Calcula a distancia entre dois pontos
-void pto_distancia (Ponto* p1, Ponto* p2); // Calcula a distancia entre dois pontos
+float pto_distancia (Ponto* p1, Ponto* p2); // Calcula a distancia entre dois pontos
