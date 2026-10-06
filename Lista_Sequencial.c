@@ -149,7 +149,34 @@ int remove_lista(Lista* li, int mat){
     // diminui a quanotidade de elementos da lista
     li->qtd--;
     return 1;
-    }
+}
+
+int consulta_lista_pos(Lista* li, int pos, struct aluno *al){
+    // Verificar se a lista existe, se a posicao e positiva (1, 2, 3...) e se a posicao for maior que a quantidade
+    if(li == NULL || pos <= 0 || pos > li->qtd)
+        return 0;
+    // Se passou no teste pego a informacao da posicao - 1 dos dados
+    // Pego o conteudo dessa posicao e copio para o ponteiro al (o ponteiro para estrutura)
+    // E modificado o conteudo do ponteiro al (o ponteiro para estrutura com os dados que esta na posicao pos-1)
+    *al = li->  dados[pos-1];
+    return 1;
+}
+
+int consulta_lista_mat(Lista* li, int mat, struct aluno *al){
+    if(li == NULL)
+        return 0;
+    int k,i = 0;
+    // De 0 ate o ultimo elemento da lista equanto o valor i na posicao da matricula for diferente da matricula informada
+    while(i<li->qtd && li->dados[i].matricula != mat)
+        i++;
+    // Se i for igual a quantidade entao nao foi possivel encontrar o elemento procurado
+    if(i == li->qtd) // Elemento nao foi encontrado
+        return 0;
+    // Se o elemento for encontrado pego os dados da posicao i e guardop dentro do ponteiro al (dentro do conteudo do struct aluno)
+    *al = li-> dados[i];
+    return 1;
+}
+
 int main () {
     Lista *li; // Ponteiro pro tipo lista 
     li = cria_lista();
@@ -176,4 +203,6 @@ int main () {
     int x = remove_lista_final(li);
     int x = remove_lista_inicio(li);
     int x = remove_lista(li, matricula_aluno.matricula);
+    int x = consulta_lista_pos(li, posicao, &dados_aluno);
+    int x = consulta_lista_mat(li, posicao, &dados_aluno);
 }

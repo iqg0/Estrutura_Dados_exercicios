@@ -41,3 +41,9 @@ int remove_lista_inicio(Lista* li);
 
 // Remover um elemento qualquer
 int remove_lista(Lista* li, int mat);
+
+// Consultar um elemento da lista por posicao
+int consulta_lista_pos(Lista* li, int pos, struct aluno *al);
+
+// Consulta por conteudo(por matricula)
+int consulta_lista_mat(Lista* li, int mat, struct aluno *al);
