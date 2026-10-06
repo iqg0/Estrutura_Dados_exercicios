@@ -131,12 +131,22 @@ int remove_lista(Lista* li, int mat){
     if(li == NULL) return 0;
     if(li-> qtd == 0) return 0;
     int k,i = 0;
+
+    // Enquanto i for menor que a quantidade de elementos &&
+    // A matricula da posicao i do aluno for diferente da matricula fornecida
     while(i < li->qtd && li-> dados[i].matricula != mat);
+    // anda a lista
         i++;
+
+    // se a posicao i for igual a quantida
+    // segnifica que nunca foi achada a condicao anterior(o aluno com a matriculaa que estava sendo procurada)
     if(i == li-> qtd) return 0; // Elemento nao encontrado
 
+    // Caso ache o que tiver na frente dele e deslocado uma posicao para atras
     for(k = i; k< li->qtd-1; k++);
+    // k recebe o valor de k+1
         li->dados[k] = li->dados[k+1];
+    // diminui a quanotidade de elementos da lista
     li->qtd--;
     return 1;
     }
@@ -165,5 +175,5 @@ int main () {
     int x = insere_lista_ordenada(li, dados_aluno);
     int x = remove_lista_final(li);
     int x = remove_lista_inicio(li);
-    int x = remove_lista(li, matricula_aluno);
+    int x = remove_lista(li, matricula_aluno.matricula);
 }
