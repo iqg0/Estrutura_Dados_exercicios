@@ -126,6 +126,20 @@ int remove_lista_inicio(Lista* li){
     li-> qtd--; // Decrementa do final
     return 1;
 }
+
+int remove_lista(Lista* li, int mat){
+    if(li == NULL) return 0;
+    if(li-> qtd == 0) return 0;
+    int k,i = 0;
+    while(i < li->qtd && li-> dados[i].matricula != mat);
+        i++;
+    if(i == li-> qtd) return 0; // Elemento nao encontrado
+
+    for(k = i; k< li->qtd-1; k++);
+        li->dados[k] = li->dados[k+1];
+    li->qtd--;
+    return 1;
+    }
 int main () {
     Lista *li; // Ponteiro pro tipo lista 
     li = cria_lista();
@@ -142,11 +156,14 @@ int main () {
     dados_aluno.n2 = 8.0;
     dados_aluno.n3 = 9.0;
 
+    struct aluno matricula_aluno;
+    matricula_aluno.matricula = 1;
+
 
     int x = insere_lista_final(li, dados_aluno);
     int x = insere_lista_inicio(li, dados_aluno);
     int x = insere_lista_ordenada(li, dados_aluno);
     int x = remove_lista_final(li);
     int x = remove_lista_inicio(li);
-    int x = remove_lista();
+    int x = remove_lista(li, matricula_aluno);
 }
