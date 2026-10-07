@@ -23,6 +23,16 @@ Fila* cria_Fila(){
     return fi;
 }
 
+void libera_Fila(Fila* fi){
+    if(fi !=  NULL){
+        Elem* no;
+        while(fi->inicio != NULL){
+            no = fi->inicio;
+            fi->inicio;
+        }
+    }
+}
+
 int main(){
     Fila *fi; // Ponteiro para o descritor
     int x = cria_Fila();
