@@ -1,0 +1,29 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include "FilaDinamica.h"
+
+struct fila{
+    struct elemento *inicio;
+    struct elemento *final;
+};
+
+struct elemento{
+    struct aluno dados;
+    struct elemento *prox;
+};
+
+typedef struct elemento Elem;
+
+Fila* cria_Fila(){
+    Fila* fi = (Fila*) malloc(sizeof(Fila));
+    if(fi != NULL){
+        fi->final = NULL;
+        fi->inicio = NULL;
+    }
+    return fi;
+}
+
+int main(){
+    Fila *fi; // Ponteiro para o descritor
+    int x = cria_Fila();
+}
