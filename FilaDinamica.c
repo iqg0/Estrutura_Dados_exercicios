@@ -28,12 +28,15 @@ void libera_Fila(Fila* fi){
         Elem* no;
         while(fi->inicio != NULL){
             no = fi->inicio;
-            fi->inicio;
+            fi->inicio = fi->inicio->prox;
+            free(no);
         }
+        free(fi);
     }
 }
 
 int main(){
     Fila *fi; // Ponteiro para o descritor
     int x = cria_Fila();
+    libera_Fila(fi);
 }
