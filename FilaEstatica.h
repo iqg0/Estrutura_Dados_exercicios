@@ -13,3 +13,4 @@ int Fila_cheia(Fila* fi);
 int Fila_vazia(Fila* fi);
 int insere_Fila(Fila* fi, struct aluno al);
 int remove_Fila(Fila* fi);
+int consulta_Fila(Fila* fi, struct aluno *al);

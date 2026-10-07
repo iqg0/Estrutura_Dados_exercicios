@@ -60,6 +60,13 @@ int remove_Fila(Fila* fi){
     return 1;
 }
 
+int consulta_Fila(Fila* fi, struct aluno *al){
+    if(fi == NULL || Fila_vazia(fi))
+        return 0; 
+    *al = fi->dados[fi->inicio]; // Ponteiro para struct aluno recebe os dados do inicio da fila
+    return 1;
+}
+
 int main(){
     Fila *fi;
 
@@ -76,4 +83,5 @@ int main(){
     int x = Fila_vazia(fi); // OU if(Fila_vazia(fi));
     int x = insere_Fila(fi, dados_aluno);
     int x = remove_Fila(fi);
+    int x = consulta_Fila(fi, &dados_aluno);
 }
