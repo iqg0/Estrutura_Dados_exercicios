@@ -7,7 +7,7 @@ struct fila {
     struct aluno dados[MAX];
 };
 
-Fila* cria_fila(){
+Fila* cria_Fila(){
     Fila *fi = (Fila*) malloc(sizeof(struct fila));
     if(fi != NULL) {
         fi->inicio = 0;
@@ -17,12 +17,18 @@ Fila* cria_fila(){
     return fi;     
 }
 
-void libera_fila(Fila* fi){
+void libera_Fila(Fila* fi){
     free(fi);
+}
+
+int tamanho_Fila(Fila* fi){
+    if(fi == NULL)
+        return -1;
+    return fi-> qtd;
 }
 
 int main(){
     Fila *fi;
-    fi = cria_fila();
-    libera_fila(fi);
+    fi = cria_Fila();
+    libera_Fila(fi);
 }
