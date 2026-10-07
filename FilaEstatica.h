@@ -10,3 +10,4 @@ Fila*  cria_Fila();
 void libera_Fila(Fila* fi);
 int tamanho_Fila(Fila* fi);
 int Fila_cheia(Fila* fi);
+int Fila_vazia(Fila* fi);

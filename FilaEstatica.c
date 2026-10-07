@@ -27,17 +27,26 @@ int tamanho_Fila(Fila* fi){
 }
 
 int Fila_cheia(Fila* fi){
-    if(fi == NULL) return -1;
+    if(fi == NULL) return -1; 
     if(fi->qtd == MAX) 
         return 1;
     else 
     return 0;
-}   
+}
+
+int Fila_vazia(Fila* fi){
+    if(fi == NULL)
+        return -1;
+    if(fi->qtd == 0)
+        return 1;
+    else
+        return 0;
+}
 
 int main(){
     Fila *fi;
     fi = cria_Fila();
     libera_Fila(fi);
-    int x = Fila_cheia(fi);
-    if(Fila_cheia(fi));
+    int x = Fila_cheia(fi); // Ou if(Fila_cheia(fi));
+    int x = Fila_vazia(fi); // OU if(Fila_vazia(fi));
 }
