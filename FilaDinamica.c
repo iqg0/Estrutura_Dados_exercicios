@@ -46,9 +46,14 @@ int tamanho_Fila(Fila* fi){
     return cont;
 }
 
+int Fila_cheia(Fila* fi){
+    return 0;
+}
+
 int main(){
     Fila *fi; // Ponteiro para o descritor
     int x = cria_Fila();
     libera_Fila(fi);
     int x = tamanho_Fila(fi);
+    int x = Fila_cheia(fi); // Ou if(Fila_cheia(fi));
 }
