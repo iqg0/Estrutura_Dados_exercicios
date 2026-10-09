@@ -35,8 +35,20 @@ void libera_Fila(Fila* fi){
     }
 }
 
+int tamanho_Fila(Fila* fi){
+    if(fi == NULL) return 0;
+    int cont = 0;
+    Elem*  no = fi->inicio;
+    while(no != NULL){
+        cont++;
+        no = no->prox;
+    }
+    return cont;
+}
+
 int main(){
     Fila *fi; // Ponteiro para o descritor
     int x = cria_Fila();
     libera_Fila(fi);
+    int x = tamanho_Fila(fi);
 }

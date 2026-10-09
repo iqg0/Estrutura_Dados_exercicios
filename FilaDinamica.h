@@ -6,3 +6,4 @@ struct aluno{
 typedef struct fila Fila;
 Fila* cria_Fila();
 void libera_Fila(Fila* fi);
+int tamanho_Fila(Fila* fi);
