@@ -57,11 +57,28 @@ int Fila_vazia(Fila* fi){
     return 0; 
 }
 
+int insere_Fila(Fila* fi, struct aluno al){
+    if(fi == NULL) return 0;
+    Elem * no = (Elem*) malloc(sizeof(Elem));
+    if(no == NULL) return 0;
+    no->dados = al;
+    no->prox = NULL;
+    if(fi->final == NULL) // Fila vazia
+        fi->inicio = no;
+    else
+        fi->final->prox = no;
+        return 1;
+    
+}
+
 int main(){
     Fila *fi; // Ponteiro para o descritor
+    struct aluno dados_aluno;
+
     int x = cria_Fila();
     libera_Fila(fi);
     int x = tamanho_Fila(fi);
     int x = Fila_cheia(fi); // Ou if(Fila_cheia(fi));
     int x = Fila_vazia(fi); // Ou if(Fila_vazia(fi));
+    int x = insere_Fila(fi, dados_aluno);
  }
