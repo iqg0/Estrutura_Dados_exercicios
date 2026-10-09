@@ -50,10 +50,18 @@ int Fila_cheia(Fila* fi){
     return 0;
 }
 
+int Fila_vazia(Fila* fi){
+    if(fi == NULL) return 1;
+    if(fi->inicio == NULL)
+        return 1;
+    return 0; 
+}
+
 int main(){
     Fila *fi; // Ponteiro para o descritor
     int x = cria_Fila();
     libera_Fila(fi);
     int x = tamanho_Fila(fi);
     int x = Fila_cheia(fi); // Ou if(Fila_cheia(fi));
-}
+    int x = Fila_vazia(fi); // Ou if(Fila_vazia(fi));
+ }
